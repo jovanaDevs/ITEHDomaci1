@@ -1,28 +1,33 @@
 body{
 margin: 0;
-background-image: url("login.jpg");
+background-image: url("../img/login.jpg");
 background-repeat: no-repeat;
 background-size: cover;
 
 }
 
+.container img{
+    margin: 20px;
+    border: 2px solid #d9a994;
+    border-radius: 12px;
+}
 .login-form {
-    width: 340px;
-    margin: 25px auto;
-  	font-size: 15px;
-     
+    width: 410px;
+    margin: 80px auto;    
+    font-family: 'Roboto', serif;
 }
 .login-form form {
     color: white;
     margin-bottom: 15px;
-    background: #DAAD86;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    background: #9ea73c;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
     padding: 30px;
     border-radius: 12px;
 }
 .login-form h2 {
     margin: 0 0 15px;
 }
+
 .form-control, .btn {
     min-height: 38px;
     border-radius: 2px;
@@ -30,5 +35,5 @@ background-size: cover;
 .btn {        
     font-size: 15px;
     font-weight: bold;
-    background-color: #5C2018;
+    background-color: #424d15;
 }
