@@ -23,9 +23,9 @@
     
   
 
-<div class="login-form" method="post" action="">
-    <form action="#" method="post">
-        <h2 class="text-center">Prijavite se na vaš nalog</h2>       
+<div class="login-form">
+    <form action="" method="post">
+        <h2 class="text-center">Prijavi se </h2>       
         <div class="form-group">
             <input name="username" type="text" class="form-control" placeholder="Korisničko ime" required="required">
         </div>
@@ -33,7 +33,7 @@
             <input type="password" name="password" class="form-control" placeholder="Lozinka" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" name="logIn" class="btn  btn-block">Prijavi se</button>
+            <button type="submit" name="logIn" class="btn  btn-block">Prijava</button>
         </div>
         <?php  
     include "model/User.php";
@@ -44,11 +44,14 @@
         $loginResult=User::logIn($user,$connection);
         
         if($loginResult->num_rows==1){
+            session_start();
+            $_SESSION["username"]=$user->getUsername();
             header("Location: home.php");
-            echo '<script>alert("Nesto!");</script>';
+            exit();
+            
         }else{
             echo '<div class="alert alert-danger" role="alert">
-            Pogresno korisničko ime i/ili lozinka!
+            Pogrešno korisničko ime i/ili lozinka!
           </div>';
         }
     }else{

@@ -17,6 +17,10 @@ public function _construct($title,$description,$done,$createDate,$categoryID,$us
     $this->userID=$userID;
 }
 
+public static function getAll(mysqli $connection){
+    $query="SELECT * FROM task";
+    return $connection->query($query);
+}
 }
 
 

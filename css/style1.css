@@ -1,0 +1,72 @@
+ /* :root {
+	--righteous-font: 'Righteous', cursive;
+}  */
+
+body {
+	/*background-color: #536691;*/
+	background-image: url("../img/home.jpg");
+    min-height: 100vh;
+    z-index: -10;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+  		    
+}
+
+.mainDiv {
+	position: absolute;
+    min-height: 100vh;
+    min-width: 100vw;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(56, 118, 31, 0.4);
+    color: white;
+    font-size: 15px;
+}
+.beforeTasks{
+    font-size: 17px;
+}
+
+h1 {
+	margin-top: 12rem;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	/* font-family: var(--righteous-font); */
+}
+
+.lead {
+	
+	/* font-family: var(--righteous-font); */
+}
+.mainTasks ul {
+	/*border-top: 2px solid white;*/
+	margin-top: 2rem;
+	list-style: none;
+	/*display: none;*/
+}
+.mainTasks li{
+    font-size: 15px;
+	border-top: 1px solid white;
+	padding: 0.5rem 0 0.5rem 0;
+	margin: 0 1rem 0 1rem;
+}
+ .checkboxes {
+	float: left;
+	/*line-height: 15px;*/
+	width: 17px;
+	height: 17px;
+	background-color: #e9ecef;
+	border: 1px solid #e9ecef;
+	border-radius: 3px;
+} 
+.btn{
+width: 100%;
+
+}
+.descText{
+    max-width: 400px;
+}
+.navbar-nav img{
+    margin: 12px;
+}
