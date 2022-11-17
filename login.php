@@ -42,9 +42,10 @@
         
         $user=new User($_POST["username"], $_POST["password"]);
         $loginResult=User::logIn($user,$connection);
-        
         if($loginResult->num_rows==1){
             session_start();
+           $row=$loginResult->fetch_array();
+            $_SESSION["userID"]=$row["userID"];
             $_SESSION["username"]=$user->getUsername();
             header("Location: home.php");
             exit();

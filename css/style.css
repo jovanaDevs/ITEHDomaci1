@@ -1,6 +1,6 @@
 body{
 margin: 0;
-background-image: url("../img/login.jpg");
+background-image: url("../img/logintreci.jpg");
 background-repeat: no-repeat;
 background-size: cover;
 
@@ -13,13 +13,13 @@ background-size: cover;
 }
 .login-form {
     width: 410px;
-    margin: 80px auto;    
+    margin: 60px auto;    
     font-family: 'Roboto', serif;
 }
 .login-form form {
     color: white;
     margin-bottom: 15px;
-    background: #9ea73c;
+    background: #008a59;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
     padding: 30px;
     border-radius: 12px;
@@ -35,5 +35,5 @@ background-size: cover;
 .btn {        
     font-size: 15px;
     font-weight: bold;
-    background-color: #424d15;
+    background-color: #90c0a1;
 }
