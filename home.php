@@ -24,6 +24,7 @@ if (!isset($_SESSION["username"])) {
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/dde68f0f66.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    
 
     <title>Next do</title>
 </head>
@@ -64,7 +65,8 @@ if (!isset($_SESSION["username"])) {
                                 <button type="button" class="btn btn-success btn-primary btn-lg" data-toggle="modal" data-target="#updateModal">Izmeni zadatak</button>
                             </li>
                             <li class="nav-item">
-                                <button type="button" class="btn btn-success btn-primary btn-lg">Pretrazi zadatke</button>
+                            
+                            </div>
                             </li>
                         </ul>
                     </div>
@@ -195,29 +197,14 @@ if (!isset($_SESSION["username"])) {
                     <div class="modal-body">
                     <form action="" method="post" id="formUpdate">
                     <h5>Izaberite zadatak koji menjate:</h5>
-                    <select class="form-select form-select-lg mb-3" name="selectTask" aria-label=".form-select-lg example">
-                        
-                    <?php
-   try {
-    $rezultat = Task::getAll($connection, $_SESSION["username"]);
-} catch (Exception $e) {
-    echo $e->getMessage();
-    die();
-}
-if ($rezultat->num_rows == 0) {
-    echo "<select class=\"form-select form-select-lg mb-3\" aria-label=\".form-select-lg example\"><option selected>Nema zadataka</option></select>";
-} else {
-    while ($red = $rezultat->fetch_array()) :
-        $taskId=$red["taskID"];
-  ?>
-  
- 
-  
-  <option value="<?php echo $taskId;?>"><?php echo $red["title"];?></option>
-
+                    <div class="frmSearch">
                             
-                            <?php endwhile;}?>
-                            </select>
+        <input type="text" name="searchBox" id="searchBox" placeholder="Pretrazi zadatke" />
+        <div id="suggesstionBox"></div>
+        
+       
+                            </div>
+                    <br>
                         
                             <div class="form-group ">
                                 <input name="title" id="title" type="text" class="form-control" placeholder="Izmeni naslov zadatka" required="required">
@@ -247,11 +234,42 @@ if ($rezultat->num_rows == 0) {
                 </div>
             </div>
         </div>
+        <!--Search modal-->
+        <div class="modal" id="dateFilter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalCenteredLabel">Filtriranje po datumu</h3>
+
+
+
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="post" id="formDateFilter">
+                           
+                            <div class="form-group"><h5>Odaberite datum: </h5>
+                            <input type="text" id="datepicker"></div>
+                          
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success btn-primary btn-lg">Filtriraj</button>
+                                <button type="button" class="btn btn-success btn-primary btn-lg" data-dismiss="modal">Zatvori</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
          <script src="js/main.js"></script>
+         <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+ 
+  
+         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </body>
 
 </html>

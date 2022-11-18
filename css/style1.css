@@ -10,7 +10,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    
 	font-family: 'Roboto', serif;
     
 }
@@ -80,7 +80,7 @@ width: 100%;
 }
 .mainTasks{
 	
-    max-height: 400px;
+    max-height: 370px;
     margin-bottom: 10px;
     overflow:auto;
     
@@ -100,3 +100,11 @@ width: 100%;
   ::-webkit-scrollbar-thumb:hover {
 	background: rgba(56, 118, 31, 0.8); 
   }
+.mainDiv input[type=text] {
+      
+      color: black;
+  }
+  .mainDiv #search{
+    
+    color: #008a59;
+}

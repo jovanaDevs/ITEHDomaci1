@@ -35,6 +35,11 @@ public static function getById($taskID, mysqli $conn)
     }
     return $myArray;
 }
+public static function getIDByTaskTitle(mysqli $connection,$username, $search){
+    $query="SELECT * FROM task JOIN user ON task.userID=user.userID WHERE user.username='$username' AND task.title='$search' ";
+    return $connection->query($query);
+}
+
 public static function getAll(mysqli $connection,$username){
     $query="SELECT * FROM task JOIN user ON task.userID=user.userID WHERE user.username='$username' order by createDate";
     return $connection->query($query);
