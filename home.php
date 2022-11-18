@@ -219,11 +219,11 @@ if (!isset($_SESSION["username"])) {
                                 <div class="form-group ">
                                     <textarea id="description" name="description" class="form-control" rows="3" placeholder="Izmeni opis"></textarea>
                                 </div>
-                                <div class="form-group">
+                                <!--<div class="form-group">
                                     <input class="form-check-input" type="checkbox" value="checkboxDone" id="checkboxDone">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Zadatak je uradjen
-                                </div>
+                                </div>-->
                                 <div class="form-group">
                                     Prioritet zadatka:<br>
                                     <input class="form-check-input" type="radio" name="category" <?php if (isset($category) && $category == "high") ?>value="1"> Visok
