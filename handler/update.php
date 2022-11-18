@@ -22,7 +22,6 @@ if (isset($_POST["searchBox"]) && isset($_POST["title"]) && isset($_POST["descri
     }
 }else{
     echo "console.log(\"Nije sve setovano\")";
-    $puk=$_POST["selectTask"];
-    echo "console.log($puk)";
+    
 }
 ?>

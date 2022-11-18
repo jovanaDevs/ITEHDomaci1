@@ -1,10 +1,9 @@
 $("#formAdd").submit(function () {
   event.preventDefault();
-  console.log("Dodaj je pokrenuto");
   const $form = $(this);
   const $inputs = $form.find('input', 'textarea', 'radio');
   const $serijazacija = $form.serialize();
-  console.log($serijazacija);
+  
   request = $.ajax({
     url: "handler/add.php",
     type: "post",
@@ -13,14 +12,14 @@ $("#formAdd").submit(function () {
   request.done(function (response, textStatus, jqXHR) {
     console.log(response);
     if (response === "Success") {
-      alert("Task je dodat");
+      alert("Zadatak je dodat");
       location.reload(true);
     } else {
-      alert("Task nije dodat!");
+      alert("Zadatak nije dodat!");
     }
   })
   request.fail(function (JQXHR, textStatus, errorThrown) {
-    console.error("Sledeca greska se desila:" + textStatus, errorThrown);
+    console.error("Desila se greska:" + textStatus, errorThrown);
   })
 })
 $("#btnObrisi").click(function () {
@@ -37,19 +36,15 @@ $("#btnObrisi").click(function () {
       checkedRadio.closest("li").remove();
       alert("Zadatak je obrisan");
     } else {
-      alert("Zadatak nije obrisan. Prvo selektuj zadatak koji zelis da obrises!");
+      alert("Zadatak nije obrisan. Prvo selektuj zadatak koji zelis da obrišeš!");
     }
   });
 });
 $("#formUpdate").submit(function () {
   event.preventDefault();
-  console.log("Izmena");
   const $form = $(this);
   const $inputs = $form.find("input, radio, checkbox");
   const serializedData = $form.serialize();
-  console.log(serializedData);
-
-  $inputs.prop("disabled", true);
 
   request = $.ajax({
     url: "handler/update.php",
@@ -61,12 +56,12 @@ $("#formUpdate").submit(function () {
     if (response === "Success") {
       alert("Zadatak je izmenjen");
       location.reload(true);
-    } else console.log("Task nije izmenjen " + response);
+    } else console.log("Zadatak nije izmenjen " + response);
     console.log(response);
   });
 
   request.fail(function (jqXHR, textStatus, errorThrown) {
-    console.error("The following error occurred: " + textStatus, errorThrown);
+    console.error("Desila se greska: " + textStatus, errorThrown);
   });
 });
 

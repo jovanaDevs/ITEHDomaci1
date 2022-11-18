@@ -19,10 +19,10 @@ if (! empty($_POST["keyword"])) {
       <?php echo $task["title"]; ?>
     </li>
 <?php
-        } // end for
+        } 
         ?>
 </ul>
 <?php
-    } // end if not empty
+    } 
 }
 ?>

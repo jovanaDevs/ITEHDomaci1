@@ -108,3 +108,9 @@ width: 100%;
     
     color: #008a59;
 }
+.mainDiv #selectCategory{
+color: black;
+height: 100%;
+border: 2px solid #008a59;
+border-radius: 5px;
+}

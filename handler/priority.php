@@ -58,8 +58,9 @@ echo "</li>";
 
 
 
+}else{
+    echo "Ne postoji category";
 }
-
 
 
 ?>

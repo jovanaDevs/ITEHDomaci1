@@ -23,18 +23,6 @@ public static function deleteById($taskID, mysqli $connection){
  $query="DELETE FROM task WHERE taskID=$taskID";
  return $connection->query($query);
 }
-public static function getById($taskID, mysqli $conn)
-{
-    $query = "SELECT * from task WHERE taskID=$taskID";
-    $myArray = array();
-    if ($result = $conn->query($query)) {
-
-        while ($row = $result->fetch_array(1)) {
-            $myArray[] = $row;
-        }
-    }
-    return $myArray;
-}
 public static function getIDByTaskTitle(mysqli $connection,$username, $search){
     $query="SELECT * FROM task JOIN user ON task.userID=user.userID WHERE user.username='$username' AND task.title='$search' ";
     return $connection->query($query);
