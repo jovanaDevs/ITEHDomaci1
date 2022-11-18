@@ -98,10 +98,15 @@ function selectTask(val) {
   $("#searchBox").val(val);
   $("#suggesstionBox").hide();
 }
-
-
-
-
+$("#selectCategory").change(function(){
+  var vrednost = $("#selectCategory").val();
+  
+  $.get("handler/priority.php", { categoryID: vrednost },
+     function(data){
+       $("#popuni").html(data);
+     });
+  });
+  
 
 
 

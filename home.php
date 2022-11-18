@@ -65,8 +65,13 @@ if (!isset($_SESSION["username"])) {
                                 <button type="button" class="btn btn-success btn-primary btn-lg" data-toggle="modal" data-target="#updateModal">Izmeni zadatak</button>
                             </li>
                             <li class="nav-item">
+                            <select class="form-select" id="selectCategory" aria-label="Default select example">
+                                 <option selected>Filtriraj prema prioritetu</option>
+                                <option value="3">Nizak</option>
+                                 <option value="2">Normalan</option>
+                                 <option value="1">Visok</option>
+                                </select>
                             
-                            </div>
                             </li>
                         </ul>
                     </div>
@@ -74,8 +79,8 @@ if (!isset($_SESSION["username"])) {
 
 
             <!-- List of tasks-->
-            <div class="row mainTasks ">
-                <ul id="listMain" class="listMain col-lg-6 col-8 mx-auto">
+            <div class="row mainTasks " >
+                <ul id="popuni" class="listMain col-lg-6 col-8 mx-auto">
 
                     <?php
                     try {
@@ -234,33 +239,8 @@ if (!isset($_SESSION["username"])) {
                 </div>
             </div>
         </div>
-        <!--Search modal-->
-        <div class="modal" id="dateFilter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="exampleModalCenteredLabel">Filtriranje po datumu</h3>
-
-
-
-                    </div>
-                    <div class="modal-body">
-                        <form action="" method="post" id="formDateFilter">
-                           
-                            <div class="form-group"><h5>Odaberite datum: </h5>
-                            <input type="text" id="datepicker"></div>
-                          
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success btn-primary btn-lg">Filtriraj</button>
-                                <button type="button" class="btn btn-success btn-primary btn-lg" data-dismiss="modal">Zatvori</button>
-                            </div>
-                        </form>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
+       
+        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
