@@ -93,7 +93,7 @@ if (!isset($_SESSION["username"])) {
                             die();
                         }
                         if ($rezultat->num_rows == 0) {
-                            echo "<div class=\"d-flex nodata justify-content-between\"><h2>Nema nijedan još uvek nijedan zadatak!</h2><i class=\"fa-solid fa-file fa-2xl \"></i></div>";
+                            echo "<div class=\"d-flex nodata justify-content-between\"><h2>Nema još uvek nijedan zadatak!</h2><i class=\"fa-solid fa-file fa-2xl \"></i></div>";
                         } else {
                             while ($red = $rezultat->fetch_array()) :
 
