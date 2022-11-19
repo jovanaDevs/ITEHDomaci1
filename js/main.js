@@ -1,13 +1,15 @@
+$( document ).ready(function() {
+
 $("#formAdd").submit(function () {
   event.preventDefault();
   const $form = $(this);
   const $inputs = $form.find('input', 'textarea', 'radio');
-  const $serijazacija = $form.serialize();
+  const $serializedData= $form.serialize();
   
   request = $.ajax({
     url: "handler/add.php",
     type: "post",
-    data: $serijazacija
+    data: $serializedData
   });
   request.done(function (response, textStatus, jqXHR) {
     console.log(response);
@@ -83,16 +85,14 @@ $("#searchBox").keyup(function () {
       $('#taskList').css("list-style", 'none');
       $('#taskList').css("width", '180px');
       $('#taskList').css("color","#FFF");
-
+      
     }
   });
 });
 
 
-function selectTask(val) {
-  $("#searchBox").val(val);
-  $("#suggesstionBox").hide();
-}
+
+
 $("#selectCategory").change(function(){
   var vrednost = $("#selectCategory").val();
   
@@ -103,5 +103,10 @@ $("#selectCategory").change(function(){
   });
   
 
+});
+function selectTask(val) {
+  $("#searchBox").val(val);
+  $("#suggesstionBox").hide();
+}
 
 

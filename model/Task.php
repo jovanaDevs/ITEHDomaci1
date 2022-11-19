@@ -32,7 +32,7 @@ public static function filterByCategory($connection,$username,$categoryID){
     return $connection->query($query);
 }
 public static function getAll(mysqli $connection,$username){
-    $query="SELECT * FROM task JOIN user ON task.userID=user.userID WHERE user.username='$username' order by createDate";
+    $query="SELECT * FROM task JOIN user ON task.userID=user.userID WHERE user.username='$username' order by createDate DESC";
     return $connection->query($query);
 }
 public static function addTask(Task $task, mysqli $connection){

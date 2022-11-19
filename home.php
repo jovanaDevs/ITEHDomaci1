@@ -42,7 +42,8 @@ if (!isset($_SESSION["username"])) {
     <div class="mainDiv">
         <div class="container">
             <div class="container d-flex justify-content-between headerClass">
-            <a href='logout.php' class="link-info">Log out</a>
+           <!-- <a href='logout.php' class="link-info">Log out</a>-->
+           <p><button class="btn btn-success btn-primary btn-lg"><i class="glyphicon glyphicon-log-out" style="font-size:15px"></i><a href='logout.php' class="link-info" id="logout">Log out</a></button></p>
                 <h1 class="display-2 text-center">Next do lista zadataka</h1>
 
 
@@ -206,7 +207,7 @@ if (!isset($_SESSION["username"])) {
                                 <h5>Izaberite zadatak koji menjate:</h5>
                                 <div class="frmSearch">
 
-                                    <input type="text" name="searchBox" id="searchBox" placeholder="Pretrazi zadatke" />
+                                    <input type="text" name="searchBox" id="searchBox" autocomplete="off" placeholder="Pretrazi zadatke" />
                                     <div id="suggesstionBox"></div>
 
 
